@@ -13,3 +13,11 @@ If you're using the kernel.bin type:
 If you're using the BradOS V X.X.X type:
 
 `qemu-system-i386 -cdrom BradOS V X.X.X.iso`
+
+# How do I use the operating system?
+
+The "help" command is quite useful. As is the Changelog file. 
+
+## What's the password?
+
+"password"
