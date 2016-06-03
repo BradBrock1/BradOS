@@ -1,6 +1,8 @@
 # BradOS
 Note: The .iso files are acting a little weird compared to the straight bin file.
-I'd recommend using the bin file.
+I'd recommend using the bin file. 
+
+The ISO and bin file that's in the root directory is the most current version. All old versions are in /OldVersions.
 
 # How to use the bin and ISO file?
 
