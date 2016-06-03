@@ -103,6 +103,7 @@ V 0.0.13:
 		: Commands such as copy and what-not will be removed in later versions or just hidden from the help menu.
 	* [Major] Fixed the issue where entering correct commands would say they are incorrect
 		: This also means pressing enter will just go to a new line instead of spamming "bad command" :)
+	: Username is a little broken, especially when changing it :s
 
 Known issues:
 Sometimes putting in a correct command won't work, and will return a bad command. (temp fix is to spam enter). [Fixed V 0.0.13]
