@@ -1,0 +1,124 @@
+Key:
++ Add Feature
+- Remove Feature
+** Change Feature
+* Bug Fix
+: Note 	
+
+V 0.0.1: 31/10/2015
+	: First build of BradOS
+		: Features 2 Commands - cls & exit
+V 0.0.2: Unknown - No ISO build?
+	+ Added "help" command
+	** Renamed "cls" command to "clear"
+	** Change type of shutdown from void to int - Produces less errors/warnings (for me anyways, not for the user)
+	* Fixed an issue but I don't remember what it is
+
+V 0.0.3: 27/05/2016
+	+ Included "stdbool.h"
+	+ Included a check to see if interrupts are enabled
+	
+V 0.0.4: 27/05/2016
+	+ Added the option for the user to enable interrupts
+	+ Added the option for the user to disable interrupts
+
+V 0.0.5: 27/05/2016
+	+/** Added/Changed welcome text 
+		+ Added a diss
+	** Changed the colour of the welcome text
+	* Fixed an issue where when the user tries to enable or disable interrupts the text telling them if it's successful appears on one line.
+
+V 0.0.6: 27/05/2016
+	+ Added a reboot command. Unsure if working or not though.
+
+V 0.0.7: 28/05/2016
+	+ Added login feature.
+	: Confirmed reboot works
+	: Cannot currently enable interrupts (well you can but an error will occur, causing the OS to reboot). 
+
+V 0.0.8: 29/05/2016
+	+ Added exception handling!
+		: Not going to list them though! :P
+	: Turns out the reboot was actually just an error, making the OS reboot. Now that exception handling is here, rebooting isn't possible :(
+
+V 0.0.9: 29/05/2016
+	+ Added version checking
+	+ Added nothing command
+	+ Added noppity command
+	+ Added version command
+	+ Added new exit command
+	** Changed iso creation software -- now bootable! (at least on qemu)
+	** Changed exit command to shutdown
+	** Changed shutdown text	
+	** Changed login system
+	** Changed command text to include username
+	** Updated help command
+	* Fixed spelling mistake in welcoming text
+	: Note. Shutdown command and exit command seem to be working since the CPU usage goes from 100% to 0%.
+
+V 0.0.10: 31/05/2016
+	+ Included application closing function (if exit code isn't 0 and the program wants to log the issue, will write a program error to the system event (when implemented of course...)(this code still runs when a program is closed however) or to a terminal output, or both. Currently running as a test, will try to implement it when catching errors (other than ISR)). 
+	+ Added support for numpad /,*,- and + to be used.
+	** Changed Shutdown text to show a more accurate representation of what's going on.
+	* Fixed help command not showing shorthand for some commands
+	* Fixed help command missing a character for the exit command
+	* [Major] Fixed an issue where extra spaces needed to be added in order to render text properly as well as read it.
+	* Clear command now removes the initial newline when re-asking for input
+
+V 0.0.11: 01/06/2016
+	+ Added username function so you can change username
+	+ Added password system. 
+		: password is password.
+	+ Added very simple encryption system.
+	+ Added copy command which copies a block of memory which contains the "password" variable to the block of memory which contains the "output" variable, then prints the output variable to the screen.
+	** Changed how the shutdown works. Now just crashes the OS. This is a temp fix until I can work out how to actually shut down the PC.
+	** Improved readability of help
+	** Changed the reboot command. Now falls back to an earlier state. This is a temp fix until I can work out how to actually reboot the OS.
+	* Fixed an issue where the clear command doesn't add any newlines when asking for input
+
+V 0.0.12: 03/06/2016
+	+ Added the ability to write to COM1
+	** Changed the text after logging in to warn users of the clear command being a little buggy.
+	** Changed the way the command text is rendered (username@bradOS)
+	** Changed welcome string to include version
+	** Changed welcoming string to include name
+	* Fixed an issue with the username
+	* Fixed an issue with values being overwritten (only in the login part though(so far))
+	* Fixed an issue where when rebooting, some video memory is overwritten
+	* Fixed an issue where when rebooting, entering any password would work since the password was already accepted (since the OS doesn't reboot, it just goes back to the main method)
+	: All these fixes now means that shutdown via crashing the OS no longer works, and also displays the password at the end for some reason :s
+	: Now is more likely to have a "bad command" when entering commands, however, after a little bit of testing, this only really happens after you've cleared the screen. Before doing that they aren't as often. Problems with reading input :/ ... it's lead to a number of issues :(
+
+V 0.0.13: 
+	+ Added a virtual file system (though I'll probably remove once I get disk I/O figured out)
+	+ Added a virtual file called "example.brd", which you can "run"
+	+ Added four commands to navigate the virtual file system
+		+ Added cdup (change directory up)
+		+ Added cddown (change directory down)
+		+ Added cd (current directory) -- basically tells you your current directory
+		+ Added ls -- lists the files in the current directory
+	** Changed colour of initial welcome text to a deeper green
+	** Removed the text warning users that the clear command is a little buggy.
+	** Updated help menu to make the copy command slightly more readable. 
+		: Commands such as copy and what-not will be removed in later versions or just hidden from the help menu.
+	* [Major] Fixed the issue where entering correct commands would say they are incorrect
+		: This also means pressing enter will just go to a new line instead of spamming "bad command" :)
+
+Known issues:
+Sometimes putting in a correct command won't work, and will return a bad command. (temp fix is to spam enter). [Fixed V 0.0.13]
+It's actually better than Windows.
+Can delete the initial input line.
+When rebooting, some video memory is overwritten. I can't fix this no matter how hard I try. When rebooting, just enter the values like you normally would. [Fixed V 0.0.12]
+The .iso produced behaves differently from the .bin
+
+Notes:
+Username can be whatever. Password is password.
+Single developer m8.
+Developed using qemu as my emulator. Used virtualbox from time to time. There are differences, thus running on a PC will most likely produce different results. This is bad since I can't manage 3 systems at once, but is good because it means my OS is complex enough for it to happen :D
+
+
+
+Running the .bin vs the .iso produce different results
+
+Release dates for V 0.0.11 and before are all based on the system image, so they might not be 100% correct.
+BradOS V 0.0.2 seems to be missing.
