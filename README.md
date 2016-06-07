@@ -6,13 +6,13 @@ The ISO and bin file that's in the root directory is the most current version. A
 
 # How to use the bin and ISO file?
 
-I use qemu, so go ahead and instead qemu.
+I use qemu, so go ahead and use/install qemu.
 
 If you're using the kernel.bin type:
 
 `qemu-system-i386 -kernel kernel.bin`
 
-If you're using the BradOS V X.X.X type:
+If you're using the ISO type:
 
 `qemu-system-i386 -cdrom BradOS V X.X.X.iso`
 
