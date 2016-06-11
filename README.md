@@ -22,7 +22,7 @@ Create a new virtual machine. Select "other" for type of operating system, and c
 
 *The OS doesn't require more than 1 core, and can probably run with the minimalist of setups. (1mb RAM, 0GB HDD & 1MB VRAM).
 
-* I haven't tested it fully, but 1MB RAM and 0GB HDD works fine.
+\* I haven't tested it fully, but 1MB RAM and 0GB HDD works fine.
 
 # How do I use the operating system?
 
