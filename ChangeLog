@@ -118,6 +118,22 @@ V 0.0.14:
 	- Removed a piece of code which would clear certain memory addresses which did not need clearing.
 	- Removed checking for interrupts at startup.
 
+V 0.0.15:
+	+ Added stars to password so you can enter the super encrypted password without anyone seeing it.
+	** Changed the way exceptions look 
+		: Now look badass, thanks to the following improvement
+	** Changed how text is rendered
+		: Now supports colours!
+	** Changed the look of the OS
+		: Changed the entire colour of the OS
+		: Changed the username@BradOS> to resemble a more Linux like colour scheme
+	** Changed the help text so it no longer says that the reboot code doesn't work and is simulated.
+	* Fixed issue where changing username wouldn't work
+	* Fixed an issue where when changing username, the old username would remain (when displaying username, not actually storing the value)
+	- Removed copy command 
+		** Updated help
+	* Fixed a few warnings that GCC was throwing up
+
 Known issues:
 It's actually better than Windows.
 Can delete the initial input line.
