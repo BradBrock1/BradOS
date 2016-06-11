@@ -104,12 +104,23 @@ V 0.0.13:
 	* [Major] Fixed the issue where entering correct commands would say they are incorrect
 		: This also means pressing enter will just go to a new line instead of spamming "bad command" :)
 	: Username is a little broken, especially when changing it :s
+	: Stress tested this version. From 14:52 -> 22:00 and it worked perfectly. Started at 60c, and ended at 59c (in qemu).
+
+V 0.0.14:
+	+ Added a feature to check if memory is free or not.
+	** Changed the reboot code so now it actually reboots instead of re-calling the main method!
+	** Changed "@Brad OS>" to "@BradOS>"
+	** Changed introduction text to include ascii art.
+	** Changed the way exceptions are handled
+		: Included BSOD similarity.
+	* Fixed spelling issue in one of the exception messages
+		: Also removed a few unnecessary spaces in all exception messages, saving bytes of space.
+	- Removed a piece of code which would clear certain memory addresses which did not need clearing.
+	- Removed checking for interrupts at startup.
 
 Known issues:
-Sometimes putting in a correct command won't work, and will return a bad command. (temp fix is to spam enter). [Fixed V 0.0.13]
 It's actually better than Windows.
 Can delete the initial input line.
-When rebooting, some video memory is overwritten. I can't fix this no matter how hard I try. When rebooting, just enter the values like you normally would. [Fixed V 0.0.12]
 The .iso produced behaves differently from the .bin
 
 Notes:
